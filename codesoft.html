@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dhanush | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="codesoft.css">
+</head>
+<body>
+
+  <div class="blob-1"></div>
+  <div class="blob-2"></div>
+
+  <nav>
+    <div class="nav-container">
+      <h2 class="logo">😊 Simple<span>Portfolio</span></h2>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <span class="badge">Available for Work</span>
+      <h1>Dhanush</h1>
+      <p>Aspiring <span>Web Developer</span> passionate about learning and building innovative web apps.</p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn primary">See My Work</a>
+        <a href="#contact" class="btn secondary">Get In Touch</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="about" class="about reveal">
+    <div class="section-header">
+        <h2>About Me</h2>
+    </div>
+    <div class="about-container">
+      <div class="img-wrapper">
+        <img src="Dhanush (2).jpeg" alt="Picture of Dhanush">
+      </div>
+      <div class="about-text">
+        <p>I am a passionate Web Developer experienced in <strong>HTML, CSS, JavaScript, and the MERN stack</strong>. I focus on building responsive, user-friendly web apps, writing clean code, and creating seamless user experiences.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="skills reveal">
+    <h2>Technical Stack</h2>
+    <div class="skill-grid">
+      <div class="skill-card"><i class="fab fa-html5"></i> <span>HTML</span></div>
+      <div class="skill-card"><i class="fab fa-css3-alt"></i> <span>CSS</span></div>
+      <div class="skill-card"><i class="fab fa-js"></i> <span>JavaScript</span></div>
+      <div class="skill-card"><i class="fab fa-react"></i> <span>React</span></div>
+      <div class="skill-card"><i class="fab fa-node-js"></i> <span>Node.js</span></div>
+      <div class="skill-card"><i class="fas fa-database"></i> <span>MongoDB</span></div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects reveal">
+    <h2>Featured Projects</h2>
+    <div class="project-grid">
+      <div class="card" data-img="Screenshot 2026-02-13 182837.png" data-title="Temperature Converter">
+        <div class="card-glow"></div>
+        <div class="card-content">
+            <span class="tag">Utility</span>
+            <h3>Temperature Converter</h3>
+            <p>Convert Celsius, Fahrenheit, and Kelvin with ease.</p>
+        </div>
+      </div>
+
+      <div class="card" data-img="Screenshot 2026-01-29 002647.png" data-title="AI Content Studio">
+        <div class="card-glow"></div>
+        <div class="card-content">
+            <span class="tag">AI / ML</span>
+            <h3>AI Content Studio</h3>
+            <p>Create and manage AI-generated content seamlessly.</p>
+        </div>
+      </div>
+
+      <div class="card" data-img="Screenshot 2026-02-13 183710.png" data-title="Number Guessing Game">
+        <div class="card-glow"></div>
+        <div class="card-content">
+            <span class="tag">Gaming</span>
+            <h3>Number Guessing Game</h3>
+            <p>Interactive game to guess numbers within a range.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <div class="modal-box">
+        <img class="modal-content" id="modal-img">
+        <p id="caption"></p>
+    </div>
+  </div>
+
+  <section id="resume" class="resume reveal">
+    <div class="resume-card">
+        <h2>Ready to collaborate?</h2>
+        <p>Check out my full experience and technical background.</p>
+        <a href="Dhanush - canva resume.pdf" download class="btn primary">Download Resume <i class="fas fa-download"></i></a>
+    </div>
+  </section>
+
+  <section id="contact" class="contact reveal">
+    <h2>Let's Connect</h2>
+    <div class="contact-icons">
+      <a href="https://www.linkedin.com/in/h-dhanush-189565327/" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+      <a href="mailto:h.dhanush2007@gmail.com" class="social-link"><i class="far fa-envelope"></i></a>
+      <a href="https://github.com/dhanush080607" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Dhanush. Built with passion and code.</p>
+  </footer>
+
+  <script>
+    // Intersection Observer for Reveal on Scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add('show');
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+    // Modal Logic
+    const cards = document.querySelectorAll('.card');
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const caption = document.getElementById('caption');
+    const closeBtn = document.querySelector('.close');
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        modal.style.display = "flex";
+        modalImg.src = card.getAttribute('data-img');
+        caption.innerText = card.getAttribute('data-title');
+      });
+    });
+
+    closeBtn.onclick = () => modal.style.display = "none";
+    window.onclick = (e) => { if(e.target == modal) modal.style.display = "none"; }
+  </script>
+</body>
+</html>
