@@ -29,19 +29,19 @@ Here are some of my proudest works:
 
 Convert between **Celsius, Fahrenheit, and Kelvin** effortlessly.
 **Tech used:** HTML, CSS, JavaScript
-![Temp Converter](Screenshot-Temp.png)
+
 
 ### 2️⃣ AI Content Studio 🤖
 
 Manage and create **AI-generated content** seamlessly.
 **Tech used:** React, JavaScript
-![AI Content Studio](Screenshot-AI.png)
+
 
 ### 3️⃣ Number Guessing Game 🎯
 
 Fun **interactive game** to guess numbers within a range.
 **Tech used:** HTML, CSS, JavaScript
-![Number Guessing Game](Screenshot-Game.png)
+
 
 > Each project is designed with **user experience, responsiveness, and clean code** in mind. ✨
 
